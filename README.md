@@ -1,1 +1,1 @@
-In this assignment we will realize bagging using it for dataset 'load_wine' from sklearn.datasets as well as SMSSpamCollection from UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/). We will find out what different between desision tree and random forest.
+In this assignment we will realize logistic regression and NLP using it for dataset 'load_wine' from sklearn.datasets as well as SMSSpamCollection from UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/).
