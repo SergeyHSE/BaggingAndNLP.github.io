@@ -1,8 +1,9 @@
 """
-1. Load the `load_wine` data from 'sklearn.datasets'. Exclude Class 2 objects from the data.
-Scale the features using the `Standard Scale r` class with default hyperparameters.
+1. Load load_wine data from sklearn.datasets.
+Exclude Class 2 objects from the data.
+Scale the features using the Standard Scale r class with default hyperparameters.
 Train logistic regression and evaluate the importance of features.
-Specify the name of the attribute that turned out to be the least significant.
+Specify the name of the attribute that turned out to be the least significant..
 
 Note that the target value lies on the `target" key, the matrix of feature objects lies on the `data" key
 """
@@ -142,10 +143,10 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore")
 
-path = r"C:\Users\User\Documents\pyton-projects\spider\Машинное обучение\logRegression\spam.csv"
+path = r"yor path"
 print(path.replace("\\", "/"))
 
-text = pd.read_csv('C:/Users/User/Documents/pyton-projects/spider/Машинное обучение/logRegression/spam.csv', encoding='latin-1')
+text = pd.read_csv('yor path', encoding='latin-1')
 text.head()
 text.columns
 text = text.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1)
@@ -215,7 +216,11 @@ X_train_bow, X_test_bow = bow(vectorizer_tfidf, X_train_preprocess, X_test_prepr
 X_train_bow.shape
 X_test_bow.shape
 
-"""5.  Загрузите файл SMSSpamCollection из UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/). Данные содержат текстовую информацию и бинарное целевое значение (‘spam’, ‘ham’), Пусть в обучающую часть попадут первые 4000 объектов из таблицы, в тестовую часть оставшиеся объекты. Обучите `TfidfVectorizer`, помимо слов входящих в тексты, учитывайте биграммы (используйте гиперпараметр `ngram_range`). Укажите полученное число признаков."""
+"""
+5.  Train the `TfidfVectorizer`, in addition to the words included in the texts,
+take into account bigrams (use the `ngram_range` hyperparameter).
+Specify the received number of signs
+"""
 
 vectorizer_ngram = TfidfVectorizer(ngram_range=(1, 2))
 X_train_ngram, X_test_ngram = bow(vectorizer_ngram, X_train_preprocess, X_test_preprocess)
@@ -224,14 +229,22 @@ X_test_ngram.shape
 
 
 
-"""6. Загрузите файл SMSSpamCollection из UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/). Данные содержат текстовую информацию и бинарное целевое значение (‘spam’, ‘ham’), Пусть в обучающую часть попадут первые 4000 объектов из таблицы, в тестовую часть оставшиеся объекты. Обучите `TfidfVectorizer`, не учитывайте слова, которые встретились меньше 2 раз в обучающей выборке (используйте гиперпараметр `min_df`). Укажите полученное число признаков."""
+"""
+6.Train the `TfidfVectorizer', do not take into account words that have occurred less than
+2 times in the training sample (use the `min_df` hyperparameter).
+Specify the received number of signs. 
+"""
 
 vectorizer_min_df = TfidfVectorizer(min_df=2)
 X_train_df, X_test_df = bow(vectorizer_min_df, X_train_preprocess, X_test_preprocess)
 X_train_df.shape
 X_test_df.shape
 
-"""7. Загрузите файл SMSSpamCollection из UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/). Данные содержат текстовую информацию и бинарное целевое значение (‘spam’, ‘ham’), Пусть в обучающую часть попадут первые 4000 объектов из таблицы, в тестовую часть оставшиеся объекты. Обучите `TfidfVectorizer` с гиперпараметрами по умолчанию на текстах из обучающей части и получите векторное представление для объектов обучающей и тестовой части. На полученных векторных представлениях обучите логистическую регрессию и оцените долю правильных ответов на тестовой части. Укажите полученное значение доли правильных ответов."""
+"""
+7. Get a vector representation for the objects of the training and test part.
+On the received vector representations, train logistic regression and estimate the proportion of correct answers
+on the test part. Specify the received value of the percentage of correct answers.
+"""
 
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
