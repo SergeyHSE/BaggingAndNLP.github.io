@@ -113,11 +113,17 @@ X_new_pred
 score = accuracy_score(X_new_pred, y_test1)
 score
 
-"""### Классификация текстов
+"""
+####
+NLP
+####
+4. Download the SMS Spam Collection file from UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228 /).
+The data contains textual information and a binary target value (‘spam’, ‘ham’),
+Let the first 4000 objects from the table fall into the training part, and the remaining objects fall into the test part.
+Train the `TfidfVectorizer` with default hyperparameters on the texts from the training part and get
+a vector representation for the objects of the training and test part.
+Specify the received number of signs.
 
-4. Загрузите файл SMSSpamCollection из UCI (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/). Данные содержат текстовую информацию и бинарное целевое значение (‘spam’, ‘ham’), Пусть в обучающую часть попадут первые 4000 объектов из таблицы, в тестовую часть оставшиеся объекты. Обучите `TfidfVectorizer` с гиперпараметрами по умолчанию на текстах из обучающей части и получите векторное представление для объектов обучающей и тестовой части. Укажите полученное число признаков.
-
-Чтобы загрузить данные, скачайте файл по ссылке. Если вы используете google colab, то пример загрузки данных приведен ниже.
 """
 import pandas as pd
 import numpy as np
